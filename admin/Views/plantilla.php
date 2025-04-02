@@ -38,7 +38,7 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini login-page">
 <div class="wrapper">
 
   <?php 
@@ -49,7 +49,7 @@
 
     if(isset($_GET["url"])){
 
-      if($_GET["url"] == "inicio"){
+      if($_GET["url"] == "inicio" || $_GET["url"] == "ingreso"){
 
           include "modules/".$_GET["url"].".php";
       }
