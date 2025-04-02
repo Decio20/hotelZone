@@ -15,6 +15,14 @@ class UsuariosController{
                 if($respuesta["usuario"] == $_POST["usuario-Ing"] && 
                 $respuesta["clave"] == $_POST["clave-Ing"]){
 
+                    $_SESSION["ingreso"]= true;
+                    $_SESSION["id"] = $respuesta["id"];
+                    $_SESSION["usuario"] = $respuesta["usuario"];
+                    $_SESSION["clave"] = $respuesta["clave"];
+                    $_SESSION["foto"] = $respuesta["foto"];
+                    $_SESSION["rol"] = $respuesta["rol"];
+
+
                     echo "<script>
                         window.location= 'inicio';
                     </script>

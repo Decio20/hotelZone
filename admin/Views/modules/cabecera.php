@@ -19,8 +19,28 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="Views/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+
+              <?php 
+
+                if($_SESSION["foto"]== ""){
+
+                  echo '<img src="Views/img/usuarios/defecto.png" class="user-image" alt="User Image">';
+                }else{
+                  echo '<img src="'.$_SESSION["foto"].'" class="user-image" alt="User Image">';
+
+                }
+              
+              ?>
+              
+
+
+              <span class="hidden-xs">
+                
+                <?php
+                  echo $_SESSION["usuario"];
+                ?>
+              </span>
+
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
@@ -29,7 +49,7 @@
                   <a href="#" class="btn btn-success btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-danger btn-flat">Salir</a>
+                  <a href="salir" class="btn btn-danger btn-flat">Salir</a>
                 </div>
               </li>
             </ul>
