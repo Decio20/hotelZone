@@ -1,6 +1,7 @@
 <?php 
 class UsuariosController{
 
+    // Ingresar usuarios
     public function ingresoUsuariosC(){
 
         if(isset($_POST["usuario-Ing"])){
@@ -31,6 +32,50 @@ class UsuariosController{
                     echo "ERROR AL INGRESAR";
                 }
             }
+        }
+    }
+
+
+
+    // Ver usuarios
+    public function verUsuarios(){
+
+        $tablaBD = "usuarios";
+        $respuesta = UsuarioModel::verUsuariosModelo($tablaBD);
+
+        foreach($respuesta as $key => $value){
+
+            echo '
+                <tr>
+                    <td>'.($key+1).'</td>
+                    <td>'.$value["usuario"].'</td>
+                    <td>'.$value["clave"].'</td>';
+
+                    if($value["foto"] != ""){
+                       echo '<td><img src="$value["foto"]" class="user-image" alt="User Image" width="40px"></td>';
+
+                    }else{
+                        echo '<td><img src="Views/img/usuarios/defecto.png" class="user-image" alt="User Image" width="40px"></td>';
+                    }
+
+                    
+
+                   echo '<td>'.$value["rol"].'</td>
+
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-success">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+
+                            <button class="btn btn-danger">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </td>
+                        
+                </tr>';
+            ;
         }
     }
 }

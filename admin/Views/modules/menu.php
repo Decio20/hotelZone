@@ -95,7 +95,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="usuarios">
                     <i class="fa fa-home"></i>
                     <span>Usuarios</span>
                 </a>
